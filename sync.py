@@ -49,8 +49,7 @@ def sync_repository():
         time.sleep(60)
 
         git_commands = [
-            "git init",
-            "git remote add origin https://github.com/kx4x/sync.git",
+            "git remote add origin git@github.com:kx4x/sync.git",
             "git branch -M main",
             "git add .",
             f"git commit -m \"Sync: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} 🌟\"",
