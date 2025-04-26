@@ -49,6 +49,7 @@ def sync_repository():
         time.sleep(60)
 
         git_commands = [
+            "git remote remove origin 2>/dev/null || true",
             "git remote add origin git@github.com:kx4x/sync.git",
             "git branch -M main",
             "git add .",
