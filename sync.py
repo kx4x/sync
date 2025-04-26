@@ -48,13 +48,8 @@ def sync_repository():
         print("(◕‿◕) Waiting for 60 seconds before syncing...")
         time.sleep(60)
 
-        # Certifique-se de que o credential helper está configurado
-        os.system("git config --global credential.helper store")
-        
         git_commands = [
-            "git init",
-            "git remote remove origin 2>/dev/null || true",
-            "git remote add origin https://github.com/kx4x/sync.git",
+            "git remote add origin git@github.com:kx4x/sync.git",
             "git branch -M main",
             "git add .",
             f"git commit -m \"Sync: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} 🌟\"",
